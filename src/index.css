@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --textColor: #343a40;
+  --mainColor: #eb212e;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  max-width: 160rem;
+  margin: 1rem auto;
+}

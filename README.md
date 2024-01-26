@@ -9,4 +9,3 @@ Currently, two official plugins are available:
 
 
 
-https://freetestapi.com/api/v1/cars
