@@ -6,6 +6,7 @@
 :root {
   --textColor: #343a40;
   --mainColor: #eb212e;
+  --titleColor: #5e0d12;
 }
 html {
   font-size: 62.5%;
