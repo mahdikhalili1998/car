@@ -3,13 +3,19 @@ import { GET_DATA } from "../graphql/queries";
 import styles from "../css/car.module.css";
 import { Link } from "react-router-dom";
 import { FaCarSide } from "react-icons/fa";
+import Loader from "./Loader";
+import { useState } from "react";
 function Car() {
   const { data } = useQuery(GET_DATA);
-  console.log({ data });
+  const [time, setTime] = useState(false);
+
+  console.log(time);
 
   return (
     <>
-      <h1 className={styles.h1}>See cars ...</h1>
+      <h1 id="car" className={styles.h1}>
+        See cars ...
+      </h1>
       <div className={styles.cardContainer}>
         {data ? (
           data.carInfos.map((item) => (
@@ -31,7 +37,7 @@ function Car() {
             </div>
           ))
         ) : (
-          <h2>loading ...</h2>
+          <Loader />
         )}
       </div>
     </>

@@ -53,12 +53,79 @@
   border-radius: 0.5rem;
   color: var(--titleColor);
   width: 25rem;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 0;
 }
-
-
+.link:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ef4d58,
+    #f1646d,
+    #f59097,
+    #f37a82,
+    #eb212e,
+    #f7a6ab,
+    #ffffff,
+    #fbd3d5,
+    #fde9ea,
+    #f9bcc0,
+    #ed3743
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.link:hover:before {
+  opacity: 1;
+}
+.link:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fbd3d5;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 .icon {
   font-size: 2.9rem;
   margin-top: 0.4rem;
   color: var(--mainColor);
 }
 
+.link:active > .order {
+  display: none;
+}
+.link:active .icon {
+  animation: car 1s 1;
+}
+
+@keyframes car {
+  100% {
+    margin-left: 20rem;
+  }
+}

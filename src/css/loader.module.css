@@ -1,0 +1,7 @@
+.container {
+  text-align: center;
+  grid-column: 2/3;
+  justify-self: center;
+  align-self: center;
+
+}
