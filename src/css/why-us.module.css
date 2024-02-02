@@ -1,0 +1,39 @@
+.container {
+  margin: 0rem 3rem 6rem 3rem;
+}
+.container h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 6rem;
+  color: var(--textColor);
+}
+.content {
+  display: flex;
+  gap: 15rem;
+}
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem 2px #fbd3d5;
+}
+.contentContainer h2 {
+  font-size: 2rem;
+  color: var(--titleColor);
+}
+.contentContainer h2 span {
+  color: var(--mainColor);
+  font-size: 2.6rem;
+}
+.contentContainer img {
+  width: 10rem;
+}
+.contentContainer p {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--textColor);
+}

@@ -21,6 +21,10 @@
   align-items: center;
   gap: 1.5rem;
 }
+.icon ul li a {
+  text-decoration: none;
+  color: #fff;
+}
 .nav {
   display: flex;
   align-items: center;
@@ -58,7 +62,7 @@
   50% {
     transform: scale(1.03);
   }
- 100% {
+  100% {
     transform: translate(0);
   }
 }

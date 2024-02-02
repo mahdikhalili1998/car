@@ -21,7 +21,6 @@ function Header() {
               <ul>
                 <li className={styles.mainIcon}>
                   <a href="#car">
-                  
                     <FaCarOn
                       style={{
                         fontSize: "2.5rem",
@@ -33,10 +32,14 @@ function Header() {
                   <MdDarkMode />
                 </li>
                 <li>
-                  <FaBusinessTime />
+                  <a href="#how-work">
+                    <FaBusinessTime />
+                  </a>
                 </li>
                 <li style={{ fontSize: "2.5rem" }}>
-                  <FaQuestionCircle />
+                  <a href="#why-us">
+                    <FaQuestionCircle />
+                  </a>
                 </li>
                 <li>
                   <IoSearchCircle style={{ fontSize: "3.5rem" }} />
@@ -50,7 +53,9 @@ function Header() {
           </div>
         </div>
         <div className={styles.startContainer}>
-          <a className={styles.start} href="#car">Let's buy a car</a>
+          <a className={styles.start} href="#car">
+            Let's buy a car
+          </a>
         </div>
       </div>
     </>

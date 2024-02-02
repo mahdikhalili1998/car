@@ -5,10 +5,19 @@ import "./index.css";
 import store from "./app/store.jsx";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/cls36ntw30eu601w4zlvtt6m8/master",
+  cache: new InMemoryCache(),
+});
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
+  <ApolloProvider client={client}>
+    {/* // <Provider store={store}> */}
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </Provider>
+
+    {/* </Provider> */}
+  </ApolloProvider>
 );

@@ -7,8 +7,8 @@ function HowWork() {
   return (
     <div className={styles.allcontainer}>
       <div className={styles.header}>
-        <h1>How work ?</h1>
-        <p >For buying a car you should follow the three very simple steps :</p>
+        <h1 id="how-work">How work ?</h1>
+        <p>For buying a car you should follow the three very simple steps :</p>
       </div>
       <div className={styles.container}>
         <img src={select} alt="select car" />
