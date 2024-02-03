@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaCarSide } from "react-icons/fa";
 import Loader from "./Loader";
 import engineSound from "../sound/sound.mp3";
+import { useState } from "react";
 
 function Car({ display }) {
   let audio = new Audio(engineSound);
@@ -27,7 +28,10 @@ function Car({ display }) {
                 <p>Price : {item.price}</p>
               </div>
               <div onClick={start}>
-                <Link to="/detail-continue-to-buy " className={styles.link}>
+                <Link
+                  to={`/detail-continue-to-buy/${item.id} `}
+                  className={styles.link}
+                >
                   <span className={styles.icon}>
                     <FaCarSide />
                   </span>
