@@ -11,8 +11,10 @@ function Car({ display }) {
   };
   return (
     <>
-      <h1 className={styles.h1}>See cars ...</h1>
-      <div id={("car", "searchCar")}  className={styles.cardContainer}>
+      <h1 id="car" className={styles.h1}>
+        See cars ...
+      </h1>
+      <div id="searchCar" className={styles.cardContainer}>
         {!display.lenght ? (
           display.map((item) => (
             <div className={styles.cardContent} key={item.id}>

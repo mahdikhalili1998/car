@@ -10,9 +10,6 @@ import Search from "./Search";
 import { InfoContext } from "../pages/homepage";
 
 function Header() {
-  const { searchHandler } = useContext(InfoContext);
-  const [click, setClick] = useState(false);
-
   return (
     <>
       <div className={styles.container}>
@@ -46,7 +43,7 @@ function Header() {
                   </a>
                 </li>
                 <li>
-                  <Search click={click} setClick={setClick} />
+                  <Search  />
                 </li>
 
                 <li>

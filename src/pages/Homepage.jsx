@@ -11,6 +11,7 @@ import { useSearchParams } from "react-router-dom";
 export const InfoContext = createContext();
 function Homepage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [click, setClick] = useState(false);
   const [car, setCar] = useState([]);
   const [display, setDisplay] = useState([]);
   const [query, setQuery] = useState({});
@@ -38,9 +39,21 @@ function Homepage() {
     setQuery((query) => createQuery(query, { search: searchValue }));
   };
 
+  const closeHandler = () => {
+    setClick(false);
+    setQuery((query) => createQuery(query, { search: "" }));
+  };
+
   return (
     <InfoContext.Provider
-      value={{ searchValue, setSearchValue, searchHandler }}
+      value={{
+        searchValue,
+        setSearchValue,
+        searchHandler,
+        closeHandler,
+        click,
+        setClick,
+      }}
     >
       <div>
         <Header />

@@ -2,9 +2,17 @@ import React, { useContext, useState } from "react";
 import { IoSearchCircle } from "react-icons/io5";
 import { IoMdCloseCircle } from "react-icons/io";
 import { InfoContext } from "../pages/homepage";
-function Search({ click, setClick }) {
-  const { searchHandler, searchValue, setSearchValue } =
-    useContext(InfoContext);
+import styles from "../css/search.module.css";
+function Search() {
+  const {
+    searchHandler,
+    click,
+    setClick,
+    searchValue,
+    setSearchValue,
+    closeHandler,
+  } = useContext(InfoContext);
+
   return (
     <div>
       {!click ? (
@@ -12,11 +20,11 @@ function Search({ click, setClick }) {
           <IoSearchCircle style={{ fontSize: "3.5rem" }} />
         </span>
       ) : (
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <div className={styles.container}>
           <input
             style={{ padding: "0.7rem 1rem" }}
             type="text"
-            placeholder=" search ..."
+            placeholder=" Type car name"
             value={searchValue}
             onChange={(e) =>
               setSearchValue(e.target.value.toLocaleLowerCase().trim())
@@ -28,7 +36,7 @@ function Search({ click, setClick }) {
               style={{ fontSize: "3.5rem" }}
             />
           </a>
-          <span onClick={() => setClick(false)}>
+          <span onClick={closeHandler}>
             <IoMdCloseCircle style={{ marginTop: ".4rem" }} />
           </span>
         </div>
