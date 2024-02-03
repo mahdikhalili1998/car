@@ -1,14 +1,18 @@
-import React from "react";
-import carImage from "../image/bg.jpg";
+import React, { useContext, useState } from "react";
 import logo from "../image/logo.png";
 import styles from "../css/header.module.css";
 import { FaBusinessTime } from "react-icons/fa6";
 import { FaQuestionCircle } from "react-icons/fa";
-import { IoSearchCircle } from "react-icons/io5";
 import { MdDarkMode } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { FaCarOn } from "react-icons/fa6";
+import Search from "./Search";
+import { InfoContext } from "../pages/homepage";
+
 function Header() {
+  const { searchHandler } = useContext(InfoContext);
+  const [click, setClick] = useState(false);
+
   return (
     <>
       <div className={styles.container}>
@@ -42,7 +46,7 @@ function Header() {
                   </a>
                 </li>
                 <li>
-                  <IoSearchCircle style={{ fontSize: "3.5rem" }} />
+                  <Search click={click} setClick={setClick} />
                 </li>
 
                 <li>
