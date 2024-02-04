@@ -12,8 +12,8 @@ import "../css/Swiper.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-export default function App({ detail }) {
-  //   console.log(detail);
+export default function App({ detail, timer }) {
+  console.log(typeof timer);
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -26,7 +26,7 @@ export default function App({ detail }) {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: timer,
           disableOnInteraction: false,
         }}
         pagination={{
