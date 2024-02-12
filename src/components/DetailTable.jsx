@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "../css/detail.module.css";
 function DetailTable({ detail }) {
-  console.log(detail);
+  // console.log(detail);
   return (
     <div className={styles.tableContainer}>
       {detail.map((item) => (
         <table className={styles.table} key={item.images.map((num) => num.id)}>
           <thead>
-            <tr>
+            <tr style={{ color: "var(--detail)" }}>
               <th>Color </th>
               <th>Engine </th>
               <th>Features </th>

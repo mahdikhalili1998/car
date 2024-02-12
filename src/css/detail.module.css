@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 6rem;
-  column-gap: 4rem;
-  margin:2rem;
+  column-gap: 6rem;
+  margin: 2rem;
 }
 .tableContainer {
   display: flex;
@@ -30,4 +30,39 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+.moreChooses {
+  margin-top: 2rem;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.moreChooses div:nth-child(1) {
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.moreChooses div:nth-child(1) select {
+  border: 2px dotted black;
+  padding: 2px 1rem;
+  border-radius: 1rem;
+}
+.moreChooses div:nth-child(1) span {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+.moreChooses div:nth-child(2),
+.moreChooses div:nth-child(3) {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 2rem;
+}
+.link {
+  text-decoration: none;
+  background-color: var(--detail);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
 }

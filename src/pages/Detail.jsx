@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_DATA } from "../graphql/queries";
 import Loader from "../components/Loader";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "../css/detail.module.css";
 import Swiper from "../components/Swiper";
 import { v4 as uuidv4 } from "uuid";
 import DetailTable from "../components/DetailTable";
+import { IoMdTime } from "react-icons/io";
+import Cm from "../components/Cm";
+import ShowComment from "../components/ShowComment";
 function Detail() {
   const [car, setCar] = useState([]);
   const { data } = useQuery(GET_DATA);
@@ -14,7 +17,7 @@ function Detail() {
   const [timer, setTimer] = useState(3000);
   // console.log(detail);
   const { id } = useParams();
-
+  // console.log(id);
   useEffect(() => {
     if (data) {
       setCar(data.carInfos);
@@ -38,10 +41,6 @@ function Detail() {
     }
   }, [data, car]);
 
-  const timerHandler = (e) => {
-    const categories = e.target.value;
-    console.log(categories);
-  };
   return (
     <>
       {!detail ? (
@@ -53,8 +52,9 @@ function Detail() {
             key={item.images.map((num) => num.id)}
           >
             <Swiper detail={detail} timer={timer} />
-            <div>
+            <div className={styles.moreChooses}>
               <div>
+                <span style={{ color: "var(--detail)" }}>{<IoMdTime />}</span>
                 <label htmlFor="cars">Set Slider Time : </label>
                 <select
                   onChange={(e) => setTimer(+e.target.value)}
@@ -67,8 +67,29 @@ function Detail() {
                   <option value={12000}>12 </option>
                 </select>
               </div>
+              <div>
+                <h3> Do You Have Question ?</h3>
+                <Link
+                  style={{ backgroundColor: "#e7b939" }}
+                  className={styles.link}
+                >
+                  Connect To Consultants{" "}
+                </Link>
+              </div>
+              <div>
+                <h3>Do You Like This Car ?</h3>
+                <Link className={styles.link}>Go To Payment & Purchase</Link>
+              </div>
             </div>
             <DetailTable detail={detail} />
+            <Cm id={id} />
+            <div
+              style={{
+                gridColumn: "1/3",
+              }}
+            >
+              <ShowComment id={id} />
+            </div>
           </div>
         ))
       )}

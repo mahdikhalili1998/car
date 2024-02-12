@@ -51,7 +51,7 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: var(--swiper-theme-color);
+  color: var(--detail);
 }
 
 .autoplay-progress svg {
@@ -63,9 +63,19 @@ body {
   width: 100%;
   height: 100%;
   stroke-width: 4px;
-  stroke: var(--swiper-theme-color);
+  stroke: var(--detail);
   fill: none;
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+.swiper-button-next::after {
+  color: var(--detail);
+}
+.swiper-button-prev::after {
+  color: var(--detail);
+}
+
+/*  */
+/* --swiper-theme-color */
+/* --swiper-theme-color */

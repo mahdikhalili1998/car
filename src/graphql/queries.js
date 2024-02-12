@@ -24,4 +24,14 @@ const GET_DATA = gql`
     }
   }
 `;
-export { GET_DATA };
+
+const GET_COMMENT = gql`
+  query MyQuery($id: ID!) {
+    comments(where: { carInfo: { id: $id } }) {
+      id
+      name
+      text
+    }
+  }
+`;
+export { GET_DATA, GET_COMMENT };
