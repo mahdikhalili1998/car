@@ -53,7 +53,9 @@ function ShowComment({ id }) {
           </Container>
         ))
       ) : (
-        <Loader />
+        <Typography mb={8} textAlign={"center"} component={"h4"} variant="h4">
+          No comments yet ...
+        </Typography>
       )}
     </div>
   );

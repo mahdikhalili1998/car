@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_DATA } from "../graphql/queries";
 import Loader from "../components/Loader";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import styles from "../css/detail.module.css";
 import Swiper from "../components/Swiper";
 import { v4 as uuidv4 } from "uuid";
@@ -10,11 +10,16 @@ import DetailTable from "../components/DetailTable";
 import { IoMdTime } from "react-icons/io";
 import Cm from "../components/Cm";
 import ShowComment from "../components/ShowComment";
+import cx from "classnames";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { Typography } from "@mui/material";
+
 function Detail() {
   const [car, setCar] = useState([]);
   const { data } = useQuery(GET_DATA);
   const [detail, setDetail] = useState([]);
   const [timer, setTimer] = useState(3000);
+  const navigate = useNavigate();
   // console.log(detail);
   const { id } = useParams();
   // console.log(id);
@@ -67,6 +72,15 @@ function Detail() {
                   <option value={12000}>12 </option>
                 </select>
               </div>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+                onClick={() => navigate(-1)}
+              >
+                <ArrowBackIcon sx={{ fontSize: "5rem", color: "#1976d2" }} />
+                <Typography component={"p"} variant="p">
+                  Back to last page
+                </Typography>
+              </div>
               <div>
                 <h3> Do You Have Question ?</h3>
                 <Link
@@ -76,9 +90,13 @@ function Detail() {
                   Connect To Consultants{" "}
                 </Link>
               </div>
-              <div>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              >
                 <h3>Do You Like This Car ?</h3>
-                <Link className={styles.link}>Go To Payment & Purchase</Link>
+                <Link className={cx(styles.link, styles.buy)}>
+                  Go To Payment & Purchase
+                </Link>
               </div>
             </div>
             <DetailTable detail={detail} />

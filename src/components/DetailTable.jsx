@@ -10,7 +10,7 @@ function DetailTable({ detail }) {
             <tr style={{ color: "var(--detail)" }}>
               <th>Color </th>
               <th>Engine </th>
-              <th>Features </th>
+              <th colSpan={2}>Features </th>
               <th>Fuel Type </th>
               <th>HorsePower </th>
               <th>Make </th>
