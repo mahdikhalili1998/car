@@ -71,3 +71,52 @@
   margin-top: -0.5rem;
   padding: 0.6rem 1.2rem;
 }
+.time span {
+  color: var(--detail);
+}
+.isLike {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (max-width: 1190px) {
+  .detailContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .moreChooses {
+    align-items: center;
+  }
+  .moreChooses div:nth-child(1) {
+    font-size: 3.2rem;
+  }
+  .moreChooses div:nth-child(1) select {
+    font-size: 2.8rem;
+  }
+  .moreChooses div:nth-child(1) span {
+    font-size: 3.5rem;
+  }
+  .moreChooses div:nth-child(2),
+  .moreChooses div:nth-child(3) {
+    font-size: 2.2rem;
+  }
+  .buy {
+    font-size: 2.6rem;
+  }
+  .hh3 {
+    font-size: 2.2rem;
+  }
+  .table {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 635px) {
+  .moreChooses div:nth-child(3) {
+    flex-direction: column;
+  }
+  .isLike {
+    flex-direction: column;
+  }
+}

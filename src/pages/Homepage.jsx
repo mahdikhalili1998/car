@@ -53,7 +53,7 @@ function Homepage() {
         closeHandler,
         click,
         setClick,
-    data
+        data,
       }}
     >
       <div>

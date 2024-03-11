@@ -1,5 +1,6 @@
 .container {
-  margin: 0 3rem;
+  text-align: center;
+  margin: 0rem 3rem;
   border-radius: 1rem;
   height: 30rem;
   background-image: linear-gradient(to right bottom, #161619c3, #161619c3),
@@ -7,12 +8,28 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  /* width: 100%; */
   gap: 9rem;
   margin-bottom: 6rem;
+  position: relative;
 }
 .container img {
   width: 25rem;
 }
+.icon {
+  animation: down 0.4s forwards;
+}
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .icon ul {
   display: flex;
   list-style: none;
@@ -78,5 +95,31 @@
   }
   100% {
     background-color: #eb212ec8;
+  }
+}
+.menu {
+  color: #fff;
+  width: 2rem;
+  font-size: 4rem;
+}
+
+@media (max-width: 730px) {
+  .container {
+    margin: 0;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .nav {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .icon ul {
+    font-size: 4.5rem;
+  }
+  .startContainer {
+    margin-top: -6rem;
+    margin-right: 42rem;
   }
 }

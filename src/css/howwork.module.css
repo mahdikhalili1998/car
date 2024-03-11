@@ -1,5 +1,8 @@
 .allcontainer {
   margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .allcontainer h1 {
   text-align: center;
@@ -51,4 +54,27 @@
 .title h2 {
   font-size: 2.5rem;
   color: var(--titleColor);
+}
+
+@media (max-width: 1100px) {
+  .header {
+    margin-bottom: 15rem;
+  }
+  .header p {
+    font-size: 2.5rem;
+  }
+  .container img {
+    width: 30rem;
+  }
+  .container {
+    flex-direction: column;
+    gap: 7rem;
+    margin-bottom: 5rem;
+  }
+  .container:nth-child(odd) {
+    flex-direction: column;
+  }
+  .title p {
+    font-size: 2rem;
+  }
 }

@@ -7,7 +7,7 @@
   --textColor: #343a40;
   --mainColor: #eb212e;
   --titleColor: #5e0d12;
-  --detail:#22b8cf
+  --detail: #22b8cf;
 }
 html {
   font-size: 62.5%;
@@ -15,4 +15,11 @@ html {
 body {
   max-width: 160rem;
   margin: 1rem auto;
+}
+
+@media (max-width: 1000px) {
+  body {
+    margin-left: 5rem;
+    width: 100%;
+  }
 }

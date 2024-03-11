@@ -58,8 +58,8 @@ function Detail() {
           >
             <Swiper detail={detail} timer={timer} />
             <div className={styles.moreChooses}>
-              <div>
-                <span style={{ color: "var(--detail)" }}>{<IoMdTime />}</span>
+              <div className={styles.time}>
+                <span>{<IoMdTime />}</span>
                 <label htmlFor="cars">Set Slider Time : </label>
                 <select
                   onChange={(e) => setTimer(+e.target.value)}
@@ -73,6 +73,7 @@ function Detail() {
                 </select>
               </div>
               <div
+                className={styles.back}
                 style={{ display: "flex", alignItems: "center", gap: "1rem" }}
                 onClick={() => navigate(-1)}
               >
@@ -91,9 +92,10 @@ function Detail() {
                 </Link>
               </div>
               <div
-                style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+              className={styles.isLike}
+               
               >
-                <h3>Do You Like This Car ?</h3>
+                <h3 className={styles.hh3}>Do You Like This Car ?</h3>
                 <Link className={cx(styles.link, styles.buy)}>
                   Go To Payment & Purchase
                 </Link>

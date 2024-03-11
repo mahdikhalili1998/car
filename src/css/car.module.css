@@ -1,8 +1,9 @@
 .cardContainer {
-  margin: 0 3rem;
+  margin: 0 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
+  padding: 0rem 1rem;
 }
 .h1 {
   text-align: center;
@@ -127,5 +128,45 @@
 @keyframes car {
   100% {
     margin-left: 20rem;
+  }
+}
+
+@media (max-width: 1135px) {
+  .cardContainer img {
+    width: 20rem;
+  }
+  .shortInfo {
+    font-size: 1.5rem;
+  }
+  .cardContent h2 {
+    font-size: 2rem;
+  }
+  .link {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .h1 {
+    font-size: 5rem;
+  }
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+  .cardContent img {
+    /* aspect-ratio: none; */
+    width: 35rem;
+  }
+  .cardContent h2 {
+    font-size: 3.5rem;
+  }
+  .shortInfo {
+    font-size: 2.8rem;
+  }
+  .link {
+    font-size: 2.5rem;
+    width: 100%;
   }
 }
