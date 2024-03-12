@@ -6,7 +6,7 @@ function DetailTable({ detail }) {
     <div className={styles.tableContainer}>
       {detail.map((item) => (
         <table className={styles.table} key={item.images.map((num) => num.id)}>
-          <thead >
+          <thead>
             <tr style={{ color: "var(--detail)" }}>
               <th>Color </th>
               <th>Engine </th>
@@ -47,3 +47,4 @@ function DetailTable({ detail }) {
 }
 
 export default DetailTable;
+//div 
